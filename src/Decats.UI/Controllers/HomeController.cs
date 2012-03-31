@@ -30,12 +30,6 @@ namespace Decats.UI.Controllers
                 list = string.Format("{0},", box.Id);
             }
 
-            //var box = _session.Load<Box>(1);
-            //box.RelocateToNewCampus("St. Pius");
-
-            //_session.Store(box);
-            //_session.SaveChanges();
-
             return Content(list);
         }
 
