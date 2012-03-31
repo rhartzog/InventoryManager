@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decats.Core.Tests", "tests\Decats.Core.Tests\Decats.Core.Tests.csproj", "{21D7F482-D196-4E91-BFAA-6D8D75406988}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decats.Core", "src\Decats.Core\Decats.Core.csproj", "{D96B92DB-6D8B-4715-AD87-0BC2E6FE429E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decats.UI", "src\Decats.UI\Decats.UI.csproj", "{B30B7A32-DCDB-4FBD-923B-A486BD679976}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21D7F482-D196-4E91-BFAA-6D8D75406988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D7F482-D196-4E91-BFAA-6D8D75406988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D7F482-D196-4E91-BFAA-6D8D75406988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D7F482-D196-4E91-BFAA-6D8D75406988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96B92DB-6D8B-4715-AD87-0BC2E6FE429E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96B92DB-6D8B-4715-AD87-0BC2E6FE429E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96B92DB-6D8B-4715-AD87-0BC2E6FE429E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96B92DB-6D8B-4715-AD87-0BC2E6FE429E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30B7A32-DCDB-4FBD-923B-A486BD679976}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30B7A32-DCDB-4FBD-923B-A486BD679976}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30B7A32-DCDB-4FBD-923B-A486BD679976}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30B7A32-DCDB-4FBD-923B-A486BD679976}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
