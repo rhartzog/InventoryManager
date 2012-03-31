@@ -53,7 +53,7 @@ namespace Decats.UI
         private INinjectModule[] InitModules()
         {
             INinjectModule[] modules = {
-                                           
+                                           new RavenDbModule()
                                        };
 
             return modules;
