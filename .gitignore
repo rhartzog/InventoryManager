@@ -57,6 +57,9 @@ DocProject/Help/html
 # Click-Once directory
 publish
 
+# Directory created by Nuget
+packages
+
 # Others
 [Bb]in
 [Oo]bj
