@@ -2,8 +2,7 @@
 using Ninject.Modules;
 using Ninject.Web.Common;
 using Raven.Client;
-using Raven.Client.Embedded;
-using Raven.Database.Server;
+using Raven.Client.Document;
 
 namespace Decats.UI.Infrastructure
 {
@@ -17,12 +16,8 @@ namespace Decats.UI.Infrastructure
 
         public static IDocumentStore Initialize()
         {
-            var documentStore = new EmbeddableDocumentStore
-                                    {DataDirectory = @"~\Data"};
+            var documentStore = new DocumentStore {ConnectionStringName = "RavenDB"};
             documentStore.Initialize();
-
-            var server = new HttpServer(documentStore.Configuration, documentStore.DocumentDatabase);
-            server.StartListening();
 
             return documentStore;
         }

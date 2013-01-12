@@ -1,0 +1,18 @@
+﻿@model Item
+
+@{
+    ViewBag.Title = "title";
+}
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Name)<br/>
+        @Html.TextBoxFor(m => m.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description)
+    </div>
+    <input type="submit" name="Submit" value="Create"/>
+}
