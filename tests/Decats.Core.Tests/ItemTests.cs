@@ -7,28 +7,28 @@ namespace Decats.Core.Tests
     public class ItemTests
     {
         [Test]
-        public void Can_create_item()
+        public void CanCreateItem()
         {
             var item = new Item("Printer Paper 8.5x11");
             Assert.IsNotNull(item);
         }
 
         [Test]
-        public void Item_has_name()
+        public void ItemHasName()
         {
             var item = new Item("Printer Paper 8.5x11");
             Assert.AreEqual("Printer Paper 8.5x11", item.Name);
         }
 
         [Test]
-        public void Item_has_description()
+        public void ItemHasDescription()
         {
             var item = new Item("Name", "This is used to print things");
             Assert.AreEqual("This is used to print things", item.Description);
         }
 
         [Test]
-        public void Can_change_item_name()
+        public void CanChangeItemName()
         {
             var item = new Item("Name");
             item.ChangeItemName("New Name");
@@ -37,7 +37,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_change_item_description()
+        public void CanChangeItemDescription()
         {
             var item = new Item("Name", "Description");
             item.ModifyItemDescription("New Description");
@@ -46,16 +46,16 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_create_item_with_categories()
+        public void CanCreateItemWithCategories()
         {
-            var item = new Item("Name", categories: new string[] {"Office", "General"});
+            var item = new Item("Name", categories: new[] {"Office", "General"});
             
             Assert.True(item.Categories.Contains("Office"));
             Assert.True(item.Categories.Contains("General"));
         }
 
         [Test]
-        public void Can_add_category()
+        public void CanAddCategory()
         {
             var item = new Item("Name");
 
@@ -65,9 +65,9 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_remove_category()
+        public void CanRemoveCategory()
         {
-            var item = new Item("Name", categories: new string[] {"General", "Office"});
+            var item = new Item("Name", categories: new[] {"General", "Office"});
 
             Assert.True(item.Categories.Contains("Office"));
             Assert.True(item.Categories.Contains("General"));
@@ -79,7 +79,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_add_quantity()
+        public void CanAddQuantity()
         {
             var item = new Item("Name");
 
@@ -91,7 +91,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_change_quantity()
+        public void CanChangeQuantity()
         {
             var item = new Item("name");
 

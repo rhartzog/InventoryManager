@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Decats.Core.Enums;
+﻿using Decats.Core.Enums;
 using NUnit.Framework;
 
 namespace Decats.Core.Tests
@@ -11,7 +7,7 @@ namespace Decats.Core.Tests
     public class BoxTests
     {
         [Test]
-        public void Can_create_box()
+        public void CanCreateBox()
         {
             var box = new Box("str-a1", Campuses.NorthWoods);
 
@@ -21,7 +17,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_change_label()
+        public void CanChangeLabel()
         {
             var box = new Box("str-a1", Campuses.StPius);
 
@@ -33,7 +29,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_move_to_new_campus()
+        public void CanMoveToNewCampus()
         {
             var box = new Box("str-a1", Campuses.StPius);
 
@@ -45,7 +41,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_set_current_quantity()
+        public void CanSetCurrentQuantity()
         {
             var box = new Box("str-a1", Campuses.StPius);
 
@@ -55,9 +51,9 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_set_categories()
+        public void CanSetCategories()
         {
-            var box = new Box("str-a1", Campuses.NorthWoods, new string[] {"Office", "General"});
+            var box = new Box("str-a1", Campuses.NorthWoods, new[] {"Office", "General"});
 
             Assert.IsTrue(box.Categories.Contains("Office"));
             Assert.IsTrue(box.Categories.Contains("General"));
@@ -65,9 +61,9 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_add_to_category()
+        public void CanAddToCategory()
         {
-            var box = new Box("str-a1", Campuses.NorthWoods, new string[] {"Office"});
+            var box = new Box("str-a1", Campuses.NorthWoods, new[] {"Office"});
 
             Assert.IsTrue(box.Categories.Count == 1);
             Assert.IsTrue(box.Categories.Contains("Office"));
@@ -79,9 +75,9 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_remove_from_category()
+        public void CanRemoveFromCategory()
         {
-            var box = new Box("str-a1", Campuses.NorthWoods, new string[] { "Office", "General" });
+            var box = new Box("str-a1", Campuses.NorthWoods, new[] { "Office", "General" });
 
             Assert.IsTrue(box.Categories.Contains("Office"));
             Assert.IsTrue(box.Categories.Contains("General"));
@@ -94,7 +90,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_add_items_to_box()
+        public void CanAddItemsToBox()
         {
             var box = new Box("str-a1", Campuses.StRose);
 
@@ -106,7 +102,7 @@ namespace Decats.Core.Tests
         }
 
         [Test]
-        public void Can_remove_items_from_box()
+        public void CanRemoveItemsFromBox()
         {
             var box = new Box("str-a1", Campuses.StPius);
 
