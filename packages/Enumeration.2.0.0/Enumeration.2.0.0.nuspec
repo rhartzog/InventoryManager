@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Enumeration</id>
+    <version>2.0.0</version>
+    <title>Enumeration</title>
+    <authors>Headspring</authors>
+    <owners>Headspring</owners>
+    <licenseUrl>https://github.com/HeadspringLabs/Enumeration/blob/master/content/Headspring/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/HeadspringLabs/Enumeration</projectUrl>
+    <iconUrl>https://bitbucket-assetroot.s3.amazonaws.com/c/photos/2010/May/14/spray_avatar.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A utility class. Common uses include Java-like enumerations, dispatch table, flyweight, and drop-down list items/select options.</description>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>utility enumeration</tags>
+  </metadata>
+</package>

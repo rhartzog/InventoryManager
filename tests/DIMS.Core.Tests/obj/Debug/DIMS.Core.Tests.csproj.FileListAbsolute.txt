@@ -1,0 +1,9 @@
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\DIMS.Core.Tests.dll
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\DIMS.Core.Tests.pdb
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\DIMS.Core.dll
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\xunit.dll
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\DIMS.Core.pdb
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\bin\Debug\xunit.xml
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\obj\Debug\DIMS.Core.Tests.csprojResolveAssemblyReference.cache
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\obj\Debug\DIMS.Core.Tests.dll
+C:\Development\InventoryManager\tests\DIMS.Core.Tests\obj\Debug\DIMS.Core.Tests.pdb
