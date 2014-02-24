@@ -1,5 +1,5 @@
 C:\Development\InventoryManager\src\DIMS.Core\bin\Debug\DIMS.Core.dll
 C:\Development\InventoryManager\src\DIMS.Core\bin\Debug\DIMS.Core.pdb
-C:\Development\InventoryManager\src\DIMS.Core\obj\Debug\DIMS.Core.csprojResolveAssemblyReference.cache
 C:\Development\InventoryManager\src\DIMS.Core\obj\Debug\DIMS.Core.dll
 C:\Development\InventoryManager\src\DIMS.Core\obj\Debug\DIMS.Core.pdb
+C:\Development\InventoryManager\src\DIMS.Core\obj\Debug\DIMS.Core.csprojResolveAssemblyReference.cache

@@ -1,4 +1,5 @@
 ﻿using System;
+using DIMS.Core.Entities;
 using Xunit;
 
 namespace DIMS.Core.Tests
@@ -26,7 +27,7 @@ namespace DIMS.Core.Tests
 
             Assert.Equal(2, boxedItem.Quantity);
 
-            boxedItem.RemoveSome(-1);
+            boxedItem.RemoveSome(1);
 
             Assert.Equal(1, boxedItem.Quantity);
         }

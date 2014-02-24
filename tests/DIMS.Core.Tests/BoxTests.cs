@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DIMS.Core.Entities;
 using Xunit;
 
 namespace DIMS.Core.Tests
@@ -12,7 +13,7 @@ namespace DIMS.Core.Tests
             var box = new Box();
             box.AddItem(3, new Item { Name = "Test Item" });
 
-            Assert.Equal(3, box.GetContents().First().Quantity);
+            Assert.Equal(3, box.Contents.First().Quantity);
         }
 
         [Fact]
@@ -22,12 +23,12 @@ namespace DIMS.Core.Tests
             var item = new Item { Name = "Test Item" };
             box.AddItem(3, item);
 
-            Assert.Equal(3, box.GetContents().First().Quantity);
+            Assert.Equal(3, box.Contents.First().Quantity);
 
             box.AddItem(2, item);
 
-            Assert.Equal(5, box.GetContents().First().Quantity);
-            Assert.Equal(1, box.GetContents().Count);
+            Assert.Equal(5, box.Contents.First().Quantity);
+            Assert.Equal(1, box.Contents.Count);
         }
 
         [Fact]
@@ -47,11 +48,11 @@ namespace DIMS.Core.Tests
 
             box.AddItem(1, item);
 
-            Assert.Equal(1, box.GetContents().Count(x => x.Item == item));
+            Assert.Equal(1, box.Contents.Count(x => x.Item == item));
 
             box.RemoveItem(item);
 
-            Assert.Empty(box.GetContents());
+            Assert.Empty(box.Contents);
         }
 
         [Fact]
@@ -62,11 +63,11 @@ namespace DIMS.Core.Tests
 
             box.AddItem(2, item);
 
-            Assert.Equal(2, box.GetContents().First(x => x.Item == item).Quantity);
+            Assert.Equal(2, box.Contents.First(x => x.Item == item).Quantity);
 
-            box.ReduceItem(-1, item);
+            box.ReduceItem(1, item);
 
-            Assert.Equal(1, box.GetContents().First(x => x.Item == item).Quantity);
+            Assert.Equal(1, box.Contents.First(x => x.Item == item).Quantity);
         }
 
         [Fact]
@@ -77,11 +78,11 @@ namespace DIMS.Core.Tests
 
             box.AddItem(2, item);
 
-            Assert.Equal(2, box.GetContents().First(x => x.Item == item).Quantity);
+            Assert.Equal(2, box.Contents.First(x => x.Item == item).Quantity);
 
-            box.ReduceItem(-2, item);
+            box.ReduceItem(2, item);
 
-            Assert.Equal(0, box.GetContents().Count(x => x.Item == item));
+            Assert.Equal(0, box.Contents.Count(x => x.Item == item));
         }
 
         [Fact]
@@ -104,21 +105,21 @@ namespace DIMS.Core.Tests
             var box = new Box();
             Assert.Null(box.Campus);
 
-            box.RelocateBox(Campus.StPius);
+            box.RelocateBox(new Campus{Name = "St. Pius"});
 
-            Assert.Equal(Campus.StPius, box.Campus);
+            Assert.Equal("St. Pius", box.Campus.Name);
         }
 
         [Fact]
         public void Can_relocate_box_to_new_campus()
         {
-            var box = new Box(campus: Campus.StPius);
+            var box = new Box(campus: new Campus { Name = "St. Pius" });
 
-            Assert.Equal(Campus.StPius, box.Campus);
+            Assert.Equal("St. Pius", box.Campus.Name);
 
-            box.RelocateBox(Campus.StRose);
+            box.RelocateBox(new Campus { Name = "St. Rose of Lima" });
 
-            Assert.Equal(Campus.StRose, box.Campus);
+            Assert.Equal("St. Rose of Lima", box.Campus.Name);
         }
 
     }
