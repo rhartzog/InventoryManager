@@ -1,4 +1,5 @@
-﻿using DIMS.Data;
+﻿using DIMS.Core.Entities;
+using DIMS.Data;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -13,8 +14,10 @@ namespace DIMS.UI
                 .Database(
                     MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("DIMS")))
                 .Mappings(m => m.FluentMappings
-                    .AddFromAssemblyOf<BoxMap>())
-                .ExposeConfiguration(BuidSchema)
+                    .AddFromAssemblyOf<BoxMap>()
+                    .Conventions.Add(new EnumerationTypeConvention()))
+                //.ExposeConfiguration(BuidSchema)
+                .ExposeConfiguration(c => c.SetProperty("generate_statistics", "true"))
                 .BuildSessionFactory();
 
             return fluentConfiguration;
@@ -23,7 +26,7 @@ namespace DIMS.UI
         //WARNING THIS WILL TRY TO DROP ALL YOUR TABLES EVERYTIME YOU LAUNCH YOUR SITE. DISABLE AFTER CREATING DATABASE.
         private static void BuidSchema(NHibernate.Cfg.Configuration config)
         {
-            new NHibernate.Tool.hbm2ddl.SchemaUpdate(config).Execute(false, true);
+            new NHibernate.Tool.hbm2ddl.SchemaExport(config).Create(false, true);
         }
     }
 }

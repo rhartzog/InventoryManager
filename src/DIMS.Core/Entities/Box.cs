@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DIMS.Core.Enumerations;
 
 namespace DIMS.Core.Entities
 {
@@ -11,6 +12,8 @@ namespace DIMS.Core.Entities
 
         public virtual Guid Id { get; set; }
         public virtual string Label { get; set; }
+        public virtual string Description { get; set; }
+        public virtual BoxCategory BoxCategory { get; set; }
 
         public virtual Campus Campus
         {

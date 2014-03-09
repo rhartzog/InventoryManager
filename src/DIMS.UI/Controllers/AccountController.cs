@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using DIMS.UI.Models.Edit;
 
 namespace DIMS.UI.Controllers
 {
@@ -36,11 +38,10 @@ namespace DIMS.UI.Controllers
         // POST: /Account/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(UserForm user)
         {
             try
             {
-                // TODO: Add insert logic here
 
                 return RedirectToAction("Index");
             }

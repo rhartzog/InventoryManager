@@ -353,9 +353,9 @@ namespace DIMS.UI.Security
                 {
                     user =
                         UserRepository.AsQueryable()
-                            .Single(
+                            .SingleOrDefault(
                                 u =>
-                                    String.Equals(u.Username, username, StringComparison.CurrentCultureIgnoreCase) &&
+                                    u.Username.ToLower() == username.ToLower() &&
                                     u.ApplicationName == ApplicationName);
                 }
 
@@ -850,7 +850,7 @@ namespace DIMS.UI.Security
 
             try
             {
-                user = UserRepository.AsQueryable().Single(u => u.Email == email);
+                user = UserRepository.AsQueryable().SingleOrDefault(u => u.Email == email);
             }
             catch (Exception e)
             {

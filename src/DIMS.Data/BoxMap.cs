@@ -10,10 +10,15 @@ namespace DIMS.Data
             Table("Boxes");
             Id(x => x.Id);
             Map(x => x.Label);
+            Map(x => x.Description);
+            Map(x => x.BoxCategory);
+
+
 
             References(x => x.Campus)
                 .Access.ReadOnlyPropertyThroughCamelCaseField(Prefix.Underscore)
-                .Column("Campus");
+                .Column("Campus")
+                .Not.LazyLoad();
             
             HasMany(x => x.Contents)
                 .Access.ReadOnlyPropertyThroughCamelCaseField(Prefix.Underscore)

@@ -23,9 +23,7 @@ namespace DIMS.UI.Controllers
 
         public ActionResult Index()
         {
-            var box = _repository.AsQueryable().First();
-
-            return View(box);
+            return View();
         }
     }
 }

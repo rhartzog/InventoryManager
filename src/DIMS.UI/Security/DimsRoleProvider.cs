@@ -72,7 +72,7 @@ namespace DIMS.UI.Security
             {
                 role =
                     RoleRepository.AsQueryable()
-                        .Single(r => String.Equals(r.Name, roleName, StringComparison.CurrentCultureIgnoreCase));
+                        .Single(r => r.Name.ToLower() == roleName.ToLower());
 
             }
             catch (Exception e)
@@ -147,14 +147,20 @@ namespace DIMS.UI.Security
                         //get the user
                         user =
                             UserRepository.AsQueryable()
-                                .Single(u => u.Username == username && u.ApplicationName == ApplicationName);
+                                .Single(
+                                    u =>
+                                        u.Username.ToLower() == username.ToLower() &&
+                                        u.ApplicationName == ApplicationName);
 
                         if (user != null)
                         {
                             //get the role first from db
-                            Role role =
+                            var role =
                                 RoleRepository.AsQueryable()
-                                    .Single(r => r.Name == rolename && r.ApplicationName == ApplicationName);
+                                    .Single(
+                                        r =>
+                                            r.Name.ToLower() == rolename.ToLower() &&
+                                            r.ApplicationName == ApplicationName);
 
 
                             //Role role = GetRole(rolename);
@@ -254,7 +260,7 @@ namespace DIMS.UI.Security
             {
                 var user =
                     UserRepository.AsQueryable()
-                        .Single(u => u.Username == username && u.ApplicationName == ApplicationName);
+                        .Single(u => u.Username.ToLower() == username.ToLower() && u.ApplicationName == ApplicationName);
 
                 if (user != null)
                 {
@@ -278,8 +284,9 @@ namespace DIMS.UI.Security
             IList<User> usersInRole = new List<User>();
             try
             {
-                Role role =
-                    RoleRepository.AsQueryable().Single(r => r.ApplicationName == ApplicationName && r.Name == rolename);
+                var role =
+                    RoleRepository.AsQueryable()
+                        .Single(r => r.ApplicationName == ApplicationName && r.Name.ToLower() == rolename.ToLower());
 
                 usersInRole = role.UsersInRole;
             }
@@ -300,11 +307,11 @@ namespace DIMS.UI.Security
             var userIsInRole = false;
             try
             {
-                var user = UserRepository.AsQueryable().Single(u => u.Username == username);
+                var user = UserRepository.AsQueryable().Single(u => u.Username.ToLower() == username.ToLower());
 
                 if (user != null)
                 {
-                    userIsInRole = user.Roles.Any(r => r.Name == rolename);
+                    userIsInRole = user.Roles.Any(r => r.Name.ToLower() == rolename.ToLower());
                 }
             }
             catch (Exception e)
@@ -341,7 +348,7 @@ namespace DIMS.UI.Security
                 foreach (var username in usernames)
                 {
                     var user = UserRepository.AsQueryable()
-                        .Single(u => u.Username == username && u.ApplicationName == ApplicationName);
+                        .Single(u => u.Username.ToLower() == username.ToLower() && u.ApplicationName == ApplicationName);
 
                     var rolesToDelete = user.Roles.Where(r => rolenames.Contains(r.Name));
 
