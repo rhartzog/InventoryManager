@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using DIMS.Core.Entities;
+using DIMS.Core.Enumerations;
 using Xunit;
 
 namespace DIMS.Core.Tests
@@ -105,21 +106,21 @@ namespace DIMS.Core.Tests
             var box = new Box();
             Assert.Null(box.Campus);
 
-            box.RelocateBox(new Campus{Name = "St. Pius"});
+            box.RelocateBox(Campus.StPius);
 
-            Assert.Equal("St. Pius", box.Campus.Name);
+            Assert.Equal("St. Pius", box.Campus.DisplayName);
         }
 
         [Fact]
         public void Can_relocate_box_to_new_campus()
         {
-            var box = new Box(campus: new Campus { Name = "St. Pius" });
+            var box = new Box(campus: Campus.StPius);
 
-            Assert.Equal("St. Pius", box.Campus.Name);
+            Assert.Equal("St. Pius", box.Campus.DisplayName);
 
-            box.RelocateBox(new Campus { Name = "St. Rose of Lima" });
+            box.RelocateBox(Campus.StRose);
 
-            Assert.Equal("St. Rose of Lima", box.Campus.Name);
+            Assert.Equal("St. Rose of Lima", box.Campus.DisplayName);
         }
 
     }

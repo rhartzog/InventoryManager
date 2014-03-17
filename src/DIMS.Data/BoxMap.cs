@@ -12,13 +12,9 @@ namespace DIMS.Data
             Map(x => x.Label);
             Map(x => x.Description);
             Map(x => x.BoxCategory);
-
-
-
-            References(x => x.Campus)
+            Map(x => x.Campus)
                 .Access.ReadOnlyPropertyThroughCamelCaseField(Prefix.Underscore)
-                .Column("Campus")
-                .Not.LazyLoad();
+                .Column("Campus");
             
             HasMany(x => x.Contents)
                 .Access.ReadOnlyPropertyThroughCamelCaseField(Prefix.Underscore)

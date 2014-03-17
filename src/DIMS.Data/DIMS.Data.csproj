@@ -50,7 +50,6 @@
   <ItemGroup>
     <Compile Include="BoxedItemMap.cs" />
     <Compile Include="BoxMap.cs" />
-    <Compile Include="CampusMap.cs" />
     <Compile Include="EnumerationType.cs" />
     <Compile Include="DataAccess\IRepository.cs" />
     <Compile Include="DataAccess\IUnitOfWork.cs" />

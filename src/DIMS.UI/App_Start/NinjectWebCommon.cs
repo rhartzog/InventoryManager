@@ -1,5 +1,6 @@
 using System.Web.Security;
 using DIMS.Core.Entities;
+using DIMS.Core.Enumerations;
 using DIMS.Data.DataAccess;
 using DIMS.UI.Security;
 using FluentNHibernate.Utils;

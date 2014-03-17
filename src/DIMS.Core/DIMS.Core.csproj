@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Entities\Box.cs" />
     <Compile Include="Entities\BoxedItem.cs" />
-    <Compile Include="Entities\Campus.cs" />
+    <Compile Include="Enumerations\Campus.cs" />
     <Compile Include="Entities\Item.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
